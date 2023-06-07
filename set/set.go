@@ -29,7 +29,7 @@ type Set[T comparable] interface {
 	IsEmpty() bool
 
 	//清空集合
-	Clear() bool
+	Clear()
 
 	//返回集合所包含元素的数量
 	Size(e T) int
