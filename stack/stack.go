@@ -34,12 +34,14 @@ func NewStack[T any]() *Stack[T] {
 	return stack
 }
 
+// 栈顶增加一个元素
 func (stack *Stack[T]) Push(e T) bool {
 	stack.data = append(stack.data, e)
 
 	return true
 }
 
+// 出栈
 func (stack *Stack[T]) Pop(e T) bool {
 	if len(stack.data) >= 1 {
 		stack.data = stack.data[:len(stack.data)-1]
@@ -49,10 +51,12 @@ func (stack *Stack[T]) Pop(e T) bool {
 	return false
 }
 
+// 清空栈
 func (stack *Stack[T]) Clear() {
 	stack.data = make([]T, 0)
 }
 
+// 返回栈顶元素，已经是否有值
 func (stack *Stack[T]) Peek() (T, bool) {
 	if len(stack.data) >= 1 {
 		return stack.data[len(stack.data)-1], true
@@ -62,11 +66,13 @@ func (stack *Stack[T]) Peek() (T, bool) {
 	return zero, false
 }
 
+// 返回栈所包含元素的数量
 func (stack *Stack[T]) Size() int {
 
 	return len(stack.data)
 }
 
+// 判断栈是否为空
 func (stack *Stack[T]) IsEmpty() bool {
 
 	return len(stack.data) == 0
